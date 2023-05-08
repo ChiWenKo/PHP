@@ -1,0 +1,46 @@
+CREATE TABLE Classtime(
+start_time varchar(100) NOT NULL,
+end_time varchar(100) NOT NULL,
+PRIMARY KEY(start_time,end_time)
+);
+
+CREATE TABLE Courses(
+c_id int NOT NULL ,
+c_name varchar(100) NOT NULL,
+required varchar(100) NOT NULL,
+c_credit int NOT NULL,
+department varchar(100) NOT NULL,
+c_grade int NOT NULL,
+c_limit int NOT NULL,
+current_enrollment int NOT NULL,
+day varchar(100) NOT NULL,
+start_time varchar(100) NOT NULL,
+end_time varchar(100) NOT NULL,
+PRIMARY KEY(c_id, c_name,required, c_credit, day, start_time,end_time),
+FOREIGN KEY (start_time,end_time) REFERENCES Classtime(start_time,end_time)
+);
+
+CREATE TABLE Student(
+s_id int NOT NULL ,
+s_name varchar(255) NOT NULL,
+major varchar(255) NOT NULL,
+credits int NOT NULL,
+s_grade int NOT NULL,
+s_password int NOT NULL,
+PRIMARY KEY(s_id)
+);
+
+CREATE TABLE Enrollments(
+s_id int,
+c_id int,
+c_name varchar(100),
+required varchar(100),    
+c_credit int,
+day varchar(100),
+start_time varchar(100) NOT NULL,
+end_time varchar(100) NOT NULL,
+FOREIGN KEY (s_id) REFERENCES Student(s_id),
+FOREIGN KEY (c_id, c_name,required, c_credit, day, start_time,end_time) REFERENCES Courses(c_id, c_name,required, c_credit, day, start_time,end_time)
+);
+
+
