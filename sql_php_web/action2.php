@@ -16,7 +16,7 @@
 	<h1 class="large-title">加選系統<p></h1>
 	<form name="table3" method="post" action="action3.php">
 	請輸入想加選的課程: <input name ="enter_c_id">
-	<input type="submit" value="加選">
+	<input type="submit" value="加選"><p>
 	</form>
 
 	<?php
