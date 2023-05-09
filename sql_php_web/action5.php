@@ -21,13 +21,15 @@
 		$row = mysqli_fetch_assoc($result);
 		$credits = $row['c_credit'];
 		
-		//先判斷是否為必修課程
-		$sql_check = "SELECT required FROM enrollments WHERE c_id = $drop_c_id";
-		$result_check = mysqli_query($conn, $sql_check) or die('MySQL query error');;
-		$row_check = mysqli_fetch_assoc($result_check);
-		$req = "必修";
-		if ($row_check["required"] == $req) {	
-			header('Location: action4.php?status=compulsory');//必修課程不可退選
+		//先判斷是否為該年級必修課
+		$sql_r = "SELECT COUNT(*) as count 
+				  FROM enrollments e, student s, courses c 
+				  WHERE e.s_id='$student_id' AND e.c_id='$drop_c_id' AND e.required='必修' AND s.s_id=e.s_id AND c.c_id=e.c_id AND s.s_grade=c.c_grade";
+		$result_r = mysqli_query($conn, $sql_r) or die('MySQL query error');
+		$row_r = $result_r->fetch_assoc();
+		$count = $row_r['count'];
+		if ($count > 0) {
+			header('Location: action4.php?status=compulsory');//該年級必修課不可退選
 			exit;
 		}
 
