@@ -2,7 +2,7 @@
 
 <?php
 	if(isset($_POST['student_id']) && isset($_POST['student_password'])) {
-    $student_id = $_POST["student_id"]; //获取表单中输入的用户名和密码
+    $student_id = $_POST["student_id"]; //獲取表格中輸入的用戶名和密碼
     $student_password = $_POST["student_password"];
 
 		$dbhost = '127.0.0.1';
@@ -17,17 +17,17 @@
 				WHERE s_id = ".$student_id." and s_password = ".$student_password.";";
 		$result = mysqli_query($conn, $sql) or die('MySQL query error');
 
-		if(mysqli_num_rows($result) == 1){ //如果记录数为1，则说明输入的用户名和密码正确，登录成功
+		if(mysqli_num_rows($result) == 1){ //如果記錄數為1，則說明輸入的用戶名和密碼正確，登錄成功
 			session_start();
-			$_SESSION["student_id"]= $student_id; //将用户名存入session
+			$_SESSION["student_id"]= $student_id; 
 			
 			header('Location: action1.php?status=success');
-        exit;
-    }else{
+    		exit;
+    	}else{
        
-		header('Location: index.php?status=fail');
-        exit();
-    }
+			header('Location: index.php?status=fail');
+        	exit();
+    	}
 
 	}
 	mysqli_close($conn);

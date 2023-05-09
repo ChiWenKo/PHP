@@ -64,8 +64,8 @@
 		mysqli_select_db($conn, $dbname);
 
 		$sql_s = "SELECT distinct s_id, s_name,major,credits,s_grade
-				FROM student 
-				where s_id =".$student_id.";";
+				  FROM student 
+				  where s_id =".$student_id.";";
 		$result_s = mysqli_query($conn, $sql_s) or die('MySQL query error');		
 		echo "個人資訊";	
 		echo "<br><table border='1'><br>";
@@ -87,7 +87,7 @@
 		}
 		echo "</table>";
 
-		//從資料庫中獲取所有課程
+		//從資料庫中獲取所有可選課程
 		$sql = "SELECT distinct c_id, c_name, required, c_credit, department, c_grade, c_limit, current_enrollment, day, start_time,end_time
 				FROM courses as C, student as S
 				where C.c_grade <= S.s_grade  and C.department= S.major and s_id
