@@ -1,7 +1,0 @@
-//系統會根據每個同學的系所、年級，將所有必修課預選進其選課列表中
-
-INSERT INTO enrollments (s_id, c_id, c_name,required,c_credit,day,start_time,end_time)
-SELECT DISTINCT s_id, c_id, c_name,required,c_credit,day,start_time,end_time
-FROM courses as C,student as S
-WHERE C.department=S.major and required='必修' and C.c_grade = S.s_grade
-;
