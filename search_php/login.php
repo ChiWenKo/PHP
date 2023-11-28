@@ -12,8 +12,8 @@
 <body>
 	<h1 class="large-title">選課系統</h1>
     <form name="table1" method="post" action="identity_login.php">
-    帳號: <input name ="id"><p>
-	密碼: <input name ="password"><p>    
+    帳號: <input name ="id" required><p>
+	密碼: <input name ="password" required><p>    
     請選擇身分:<p>
     <input type="submit" name="student" value="學生登入">
     <input type="submit" name="teacher" value="老師登入">
