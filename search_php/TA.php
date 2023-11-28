@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h1 class="large-title">身分:助教</h1>
+	<a href = "import.php"><button>匯入課程</button></a><p>
     <a href = "logout.php"><button>登出</button></a><p>
 	
 	</form>
