@@ -2,10 +2,7 @@
 課程匯入系統<p>
 <a href="action1.php"><button>已選課表</button></a>
 <a href = "logout.php"><button>登出</button></a><p>
-<form name="table3" method="post" action="action3.php">
-請輸入想加選的課程: <input name ="enter_c_id">
-<input type="submit" value="加選">
-</form>
+
 
 <fieldset style="width: 30%;">
 	<legend>匯入課程</legend>
