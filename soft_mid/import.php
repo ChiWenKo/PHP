@@ -50,8 +50,8 @@
 			<option value="星期三">星期三</option>
 			<option value="星期四">星期四</option>
 			<option value="星期五">星期五</option>
-			<option value="星期五">星期六</option>
-			<option value="星期五">星期日</option>
+			<option value="星期六">星期六</option>
+			<option value="星期日">星期日</option>
 		</select><br>
 	
 		<label for="start_time">開始節數:</label>
