@@ -1,6 +1,6 @@
 
 課程匯入系統<p>
-<a href="action1.php"><button>已選課表</button></a>
+<a href="TA.php"><button>返回</button></a>
 <a href = "logout.php"><button>登出</button></a><p>
 
 
