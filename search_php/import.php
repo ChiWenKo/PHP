@@ -82,10 +82,10 @@
 
 <?php
 	function import($timeRanges) {
-		$server = "localhost";
-		$database = "course-registration-system";
-		$db_username = "root";
-		$db_password = "BlackPomeranian";
+		$server = "127.0.0.1";
+		$database = "testdb";
+		$db_username = "hj";
+		$db_password = "test1234";
 		$port = 3306;
 
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
