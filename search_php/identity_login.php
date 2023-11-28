@@ -40,11 +40,42 @@ if(isset($_POST['id']) && isset($_POST['password'])) {
         $teacher_id = $_POST["id"]; //獲取表格中輸入的用戶名和密碼
         $teacher_password = $_POST["password"];
 
+        $sql = "SELECT * FROM teacher 
+				WHERE t_id = ".$teacher_id." and t_password = ".$teacher_password.";";
+		$result = mysqli_query($conn, $sql) or die('MySQL query error');
+
+		if(mysqli_num_rows($result) == 1){ //如果記錄數為1，則說明輸入的用戶名和密碼正確，登錄成功
+			session_start();
+			$_SESSION["teacher_id"]= $teacher_id; 
+			
+			header('Location: teacher.php?status=success');
+    		exit;
+    	}else{
+       
+			header('Location: login.php?status=fail');
+        	exit();
+    	}
+
     }
     if (isset($_POST['TA'])) {
         $TA_id = $_POST["id"]; //獲取表格中輸入的用戶名和密碼
         $TA_password = $_POST["password"];
-        
+
+        $sql = "SELECT * FROM assistant 
+				WHERE a_id = ".$TA_id." and a_password = ".$TA_password.";";
+		$result = mysqli_query($conn, $sql) or die('MySQL query error');
+
+		if(mysqli_num_rows($result) == 1){ //如果記錄數為1，則說明輸入的用戶名和密碼正確，登錄成功
+			session_start();
+			$_SESSION["TA_id"]= $TA_id; 
+			
+			header('Location: TA.php?status=success');
+    		exit;
+    	}else{
+       
+			header('Location: login.php?status=fail');
+        	exit();
+    	}
     }
     // 關閉資料庫連接
     mysqli_close($conn);

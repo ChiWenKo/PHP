@@ -19,7 +19,7 @@
 	<br>課程開始時間: <input name ="inquire_time"><br><br>
 
 	<input type="submit" name="search" value="查詢">
-	<a href = "return.php"><button>返回</button></a>
+	<a href = "student.php"><button>返回</button></a>
 	
 	</form>
 	

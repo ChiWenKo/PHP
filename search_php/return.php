@@ -15,16 +15,16 @@ session_start();
     mysqli_query($conn, "SET NAMES 'utf8'");
     mysqli_select_db($conn, $dbname);
 
-    if($_SESSION["student_id"]= $student_id) {
-        header('Location: student.php');
+    if(isset($_SESSION["student_id"])) {
+        header('Location: student.php?status=stu');
         exit;
     }
-    elseif($_SESSION["teacher_id"]= $teacher_id) {
-        header('Location: teacher.php');
+    elseif(isset($_SESSION["teacher_id"])) {
+        header('Location: teacher.php?status=tr');
         exit;
     }
-    elseif($_SESSION["TA_id"]= $TA_id) {
-        header('Location: TA.php');
+    elseif(isset($_SESSION["TA_id"])) {
+        header('Location: TA.php?status=ta');
         exit;
     }
     

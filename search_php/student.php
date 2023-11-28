@@ -17,6 +17,7 @@
 	</form>
 	
 <?php
+	
 	session_start(); //開始存取
 	$student_id=$_SESSION["student_id"] ;
 	

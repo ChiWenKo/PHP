@@ -59,7 +59,7 @@ if (!empty($conditions)) {
     // 處理查詢結果
     if ($result->num_rows > 0) {
         // 輸出數據
-        echo "<br><br>符合條件的課程";
+        echo "<br>符合條件的課程";
 				echo "<br><table border='1'><br>";
 				echo "<tr>
 						<th> 選課代號 </th> 
